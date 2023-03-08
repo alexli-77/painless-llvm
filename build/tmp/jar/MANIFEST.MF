@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Module-Origin: https://github.com/BinaryTreeNode/elasticsearch.git
+Change: 6020de5910d8a6d755ceecc078b69b82ded7bce4
+X-Compile-Elasticsearch-Version: 8.2.0-SNAPSHOT
+X-Compile-Lucene-Version: 9.1.0-snapshot-5b522487ba8
+X-Compile-Elasticsearch-Snapshot: true
+Implementation-Title: org.elasticsearch.plugin#lang-painless;8.2.0-SNAPS
+ HOT
+Implementation-Version: 8.2.0-SNAPSHOT
+Built-Status: integration
+Built-By: files
+Built-OS: Mac OS X
+Build-Timezone: Asia/Shanghai
+Build-Date-UTC: 2023-02-21T10:04:50.723550Z
+Build-Date: 2023-02-21T10:04:47.471344Z
+Gradle-Version: 7.4.1
+Created-By: 17.0.3+6-LTS (Amazon.com Inc.)
+X-Compile-Target-JDK: 17
+X-Compile-Source-JDK: 17
+Build-Java-Version: 17
+
