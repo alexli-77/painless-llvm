@@ -12,6 +12,7 @@ import org.elasticsearch.painless.CompilerSettings;
 import org.elasticsearch.painless.ScriptClassInfo;
 import org.elasticsearch.painless.lookup.PainlessLookup;
 import org.elasticsearch.painless.node.ANode;
+import org.elasticsearch.painless.node.LLVMNode;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -29,7 +30,10 @@ public class ScriptScope extends Decorator {
     protected final ScriptClassInfo scriptClassInfo;
     protected final String scriptName;
     protected final String scriptSource;
-
+    /**
+     * LLVMNODE
+     */
+    protected final LLVMNode llvmNode = new LLVMNode();
     protected final FunctionTable functionTable = new FunctionTable();
     protected int syntheticCounter = 0;
 
@@ -150,5 +154,13 @@ public class ScriptScope extends Decorator {
 
     public boolean replicateCondition(ANode originalNode, ANode targetNode, Class<? extends Condition> type) {
         return replicate(originalNode.getIdentifier(), targetNode.getIdentifier(), type);
+    }
+    public void setllvmNodes(Object o){
+
+        this.llvmNode.setllvmNodes(o);
+    }
+    public LLVMNode getllvmNodes(){
+
+        return this.llvmNode;
     }
 }

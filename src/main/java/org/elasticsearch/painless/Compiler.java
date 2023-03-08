@@ -250,6 +250,11 @@ final class Compiler {
         new PainlessSemanticAnalysisPhase().visitClass(root, scriptScope);
         new PainlessUserTreeToIRTreePhase().visitClass(root, scriptScope);
         ClassNode classNode = (ClassNode) scriptScope.getDecoration(root, IRNodeDecoration.class).irNode();
+
+        scriptScope.getllvmNodes().createModule(name);
+        scriptScope.getllvmNodes().createFunction();
+        scriptScope.getllvmNodes().createFiles("./func.bc","./func.ll");
+
         new DefaultStringConcatenationOptimizationPhase().visitClass(classNode, null);
         new DefaultConstantFoldingOptimizationPhase().visitClass(classNode, null);
         new DefaultStaticConstantExtractionPhase().visitClass(classNode, scriptScope);

@@ -196,6 +196,18 @@ public class BindingsTests extends ScriptTestCase {
         assertEquals(16, executableScript.execute(4, 2));
     }
 
+    public void testAdd() {
+//        String script = "0 + 6";
+//        String script = "return 0 + 6";
+//        String script = "return doc['int'].value*8";
+//        String script = "decayNumericLinear(params.origin, params.scale, params.offset, params.decay, params.offset) + 6";
+//        String script = "return doc['infoId'].value * 20 + doc['int'].value * 19 + decayNumericLinear(params.origin, params.scale, params.offset, params.decay, doc['int'].value) - Math.log10(randomScore(7, '_seq_no')) + _score";
+        String script = "addWithState(4, 5, 6, 0.0)";
+
+        BindingsTestScript.Factory factory = scriptEngine.compile("name", script, BindingsTestScript.CONTEXT, Collections.emptyMap());
+        BindingsTestScript executableScript = factory.newInstance();
+    }
+
     public void testEmptyThisClassBinding() {
         String script = "addEmptyThisWithState(test)";
 
